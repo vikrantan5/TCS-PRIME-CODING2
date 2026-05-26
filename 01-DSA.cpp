@@ -348,37 +348,174 @@
 
 
 
+// #include<bits/stdc++.h>
+
+// using namespace std;
+
+// int main(){
+//     string s;
+//     getline(cin , s);
+
+//     stringstream ss(s);
+//     bool even = false;
+//     vector<string>arr;
+//     string temp;
+
+//     while(getline(ss , temp , ',' )){
+//         arr.push_back(temp);
+//     }
+//     unordered_map<string , int>mp;
+
+//     for(int i = 0 ; i<arr.size() ;i++){
+//         mp[arr[i]]++;
+
+//     }
+
+//     for(auto it : mp){
+//         if(it.second %2 !=0){
+//             cout<<it.first;
+//             even = true;
+//             break;
+//         }
+//     }
+//     if(even ==false){
+//         cout<<"all are even";
+//     }
+
+//     return 0;
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MONKEY
+
+// #include<bits/stdc++.h>
+
+// using namespace std;
+
+// int main(){
+//     int monkey;
+//     int banana;
+//     int peanut;
+//     int onebanana;
+//     int onepeanut;
+
+//     cout<<"enter the total number of the monketys";
+//     cin>>monkey;
+
+//     cout<<"total banana in the stortyu";
+//     cin>>banana;
+
+//     cout<<"total peanut in the story";
+//     cin>>peanut;
+
+//     cout<<"one money can eat number of banana";
+//     cin>>onebanana;
+
+//     cout<<"one monkey can eat peanut";
+//     cin>>onepeanut;
+
+
+//     int totalmonkey = 0;
+
+//     totalmonkey += banana/onebanana;
+//     totalmonkey += peanut/onepeanut;
+
+//     if(banana%onebanana !=0 || peanut%onepeanut !=0 || (banana%onebanana !=0 && peanut%onepeanut !=0)){
+//         totalmonkey++;
+//     }
+
+//     int remaining = monkey-totalmonkey;
+
+//     cout<<remaining;
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SORTING OF ARRAY
+
+
+
 #include<bits/stdc++.h>
 
 using namespace std;
 
+
 int main(){
+
+    int n;
+    cin>>n;
+
+    //[1,0,2,0,1,0,2]
+     cin.ignore();
     string s;
     getline(cin , s);
-
     stringstream ss(s);
 
-    vector<string>arr;
-    string temp;
+    vector<int>arr;
 
-    while(getline(ss , temp , ',' )){
-        arr.push_back(temp);
+    string temp;
+    while(getline(ss ,temp , ',' )){
+        int num = stoi(temp);
+        arr.push_back(num);
+
     }
-    unordered_map<string , int>mp;
+
+    unordered_map<int , int>mp;
 
     for(int i = 0 ; i<arr.size() ;i++){
         mp[arr[i]]++;
-
     }
 
-    for(auto it : mp){
-        if(it.second %2 !=0){
-            cout<<it.first;
-            break;
+    // 2--->2
+    // 1-->2
+    // 0--->3
+    vector<int>newarr;
+    
+
+    for(int i = 2 ; i>=0 ; i--){
+        while(mp[i]--){
+            newarr.push_back(i);
         }
     }
 
+    for(int ch :newarr){
+        cout<<ch <<" ";
+    }
+
+
+
+
     return 0;
-
-
 }
